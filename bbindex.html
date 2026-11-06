@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبو ساهر الشافعي | المنصة الشخصية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0b101d] text-slate-100 font-['Tajawal'] min-h-screen flex flex-col justify-between selection:bg-[#00d2ff] selection:text-slate-900">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-[#0b101d]/90 backdrop-blur-md border-b border-slate-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-[#00d2ff]/40 p-0.5 bg-slate-900 overflow-hidden shadow-[0_0_10px_rgba(0,210,255,0.2)]">
+                    <img src="assets/logo.png" alt="Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://via.placeholder.com/150/0b101d/00d2ff?text=A'">
+                </div>
+                <span class="font-bold text-lg text-slate-100 tracking-wide">أبو ساهر الشافعي</span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+                <button onclick="switchTab('home')" id="nav-home" class="nav-btn text-[#00d2ff] flex items-center gap-2"><i class="fa-solid fa-house"></i> الرئيسية</button>
+                <button onclick="switchTab('articles')" id="nav-articles" class="nav-btn hover:text-[#00d2ff] flex items-center gap-2"><i class="fa-solid fa-newspaper"></i> المقالات</button>
+                <button onclick="switchTab('projects')" id="nav-projects" class="nav-btn hover:text-[#00d2ff] flex items-center gap-2"><i class="fa-solid fa-[#00d2ff] fa-laptop-code"></i> المشاريع</button>
+                <button onclick="openAdminModal()" class="px-4 py-2 rounded-lg bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/30 hover:bg-[#00d2ff] hover:text-slate-950 transition-all duration-300 flex items-center gap-2 font-bold shadow-[0_0_15px_rgba(0,210,255,0.15)]">
+                    <i class="fa-solid fa-lock"></i> لوحة التحكم
+                </button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center gap-3">
+                <button onclick="openAdminModal()" class="p-2 rounded-lg bg-[#00d2ff]/10 text-[#00d2ff] border border-[#00d2ff]/30">
+                    <i class="fa-solid fa-lock"></i>
+                </button>
+                <button onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <button onclick="switchTab('home'); toggleMobileMenu()" class="block w-full text-right py-2 text-slate-200 border-b border-slate-800"><i class="fa-solid fa-house ml-2"></i>الرئيسية</button>
+            <button onclick="switchTab('articles'); toggleMobileMenu()" class="block w-full text-right py-2 text-slate-200 border-b border-slate-800"><i class="fa-solid fa-newspaper ml-2"></i>المقالات</button>
+            <button onclick="switchTab('projects'); toggleMobileMenu()" class="block w-full text-right py-2 text-slate-200 border-b border-slate-800"><i class="fa-solid fa-laptop-code ml-2"></i>المشاريع</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        <!-- PAGE 1: HOME -->
+        <section id="page-home" class="space-y-16 py-12">
+            <!-- Hero Banner -->
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <div class="relative inline-block mb-8">
+                    <div class="w-36 h-36 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-[#00d2ff] via-slate-400 to-[#00d2ff] shadow-[0_0_30px_rgba(0,210,255,0.3)] mx-auto">
+                        <img src="assets/logo.png" alt="أبو ساهر الشافعي" class="w-full h-full object-cover rounded-full bg-slate-900" onerror="this.src='https://via.placeholder.com/300/0b101d/00d2ff?text=Logo'">
+                    </div>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black text-slate-100 mb-4 tracking-tight">أبو ساهر الشافعي</h1>
+                <p class="text-slate-400 text-base md:text-xl max-w-2xl mx-auto mb-8 font-medium">
+                    مستشار تقني | مطور برمجيات | خبير في أمن المعلومات والتحول الرقمي
+                </p>
+
+                <!-- Pillars -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
+                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-[#00d2ff]/40 transition-all text-center">
+                        <div class="w-12 h-12 rounded-xl bg-[#00d2ff]/10 text-[#00d2ff] flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-[#00d2ff] fa-code"></i></div>
+                        <h3 class="font-bold text-slate-200 text-lg mb-2">تطوير البرمجيات</h3>
+                        <p class="text-slate-400 text-sm">بناء تطبيقات متكاملة، أنظمة سحابية، وواجهات عالية الأداء.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-[#00d2ff]/40 transition-all text-center">
+                        <div class="w-12 h-12 rounded-xl bg-[#00d2ff]/10 text-[#00d2ff] flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="font-bold text-slate-200 text-lg mb-2">أمن المعلومات</h3>
+                        <p class="text-slate-400 text-sm">تقييم الثغرات، حماية الأنظمة وتطبيق المعايير السيبرانية المشددة.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-[#00d2ff]/40 transition-all text-center">
+                        <div class="w-12 h-12 rounded-xl bg-[#00d2ff]/10 text-[#00d2ff] flex items-center justify-center mx-auto mb-4 text-xl"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <h3 class="font-bold text-slate-200 text-lg mb-2">التحول الرقمي</h3>
+                        <p class="text-slate-400 text-sm">استشارات تقنية وأتمتة بيئات العمل ونقل البنية التحتية للسحاب.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights -->
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2"><i class="fa-solid fa-newspaper text-[#00d2ff]"></i> أحدث المقالات</h2>
+                    <button onclick="switchTab('articles')" class="text-sm text-[#00d2ff] hover:underline">عرض الكل ←</button>
+                </div>
+                <div id="home-articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: ARTICLES -->
+        <section id="page-articles" class="hidden max-w-7xl mx-auto px-4 py-12">
+            <h1 class="text-3xl font-bold mb-8 text-slate-100 border-b border-slate-800 pb-4">المقالات والتدوينات التقنية</h1>
+            <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+        </section>
+
+        <!-- PAGE 3: PROJECTS -->
+        <section id="page-projects" class="hidden max-w-7xl mx-auto px-4 py-12">
+            <h1 class="text-3xl font-bold mb-8 text-slate-100 border-b border-slate-800 pb-4">المشاريع والأعمال</h1>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+        </section>
+
+        <!-- PAGE 4: ADMIN CONTROL PANEL -->
+        <section id="page-admin" class="hidden max-w-7xl mx-auto px-4 py-10">
+            <div class="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-100">لوحة التحكم المشرفة</h1>
+                    <p class="text-slate-400 text-sm">إدارة كاملة للمحتوى (إضافة، تعديل، حذف) مع الحفظ المحلي المتزامن.</p>
+                </div>
+                <button onclick="logoutAdmin()" class="px-4 py-2 bg-rose-500/10 text-rose-400 border border-rose-500/30 rounded-lg hover:bg-rose-500 hover:text-white transition-all text-sm font-bold">
+                    <i class="fa-solid fa-right-from-bracket ml-2"></i>تسجيل الخروج
+                </button>
+            </div>
+
+            <!-- Content Management Tabs -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Form Column -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-4">
+                    <h3 id="form-title" class="text-lg font-bold text-[#00d2ff] border-b border-slate-800 pb-2">إضافة محتوى جديد</h3>
+                    <form id="crud-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <input type="hidden" id="item-id">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1">نوع المحتوى</label>
+                            <select id="item-type" onchange="toggleFormFields()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-200">
+                                <option value="article">مقال</option>
+                                <option value="project">مشروع</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1">العنوان</label>
+                            <input type="text" id="item-title" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-200">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1">التصنيف / التقنيات</label>
+                            <input type="text" id="item-category" required placeholder="مثال: أمن معلومات / React, Node.js" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-200">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1">المحتوى / الوصف</label>
+                            <textarea id="item-content" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sm text-slate-200"></textarea>
+                        </div>
+                        <div class="flex gap-2 pt-2">
+                            <button type="submit" class="flex-1 bg-[#00d2ff] text-slate-950 font-bold py-2.5 rounded-lg hover:bg-[#00b4dc] transition-all text-sm">حفظ المحتوى</button>
+                            <button type="button" onclick="resetForm()" class="px-4 bg-slate-800 text-slate-300 rounded-lg text-sm hover:bg-slate-700">إلغاء</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Content List Column -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-slate-200 mb-4 border-b border-slate-800 pb-2">المحتوى الحالي (المقالات والمشاريع)</h3>
+                        <div id="admin-items-list" class="space-y-3 max-h-[500px] overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin Auth Modal -->
+    <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 w-full max-w-md space-y-4">
+            <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2"><i class="fa-solid fa-shield-cat text-[#00d2ff]"></i> التحقق الأمني للمشرف</h3>
+            <p class="text-xs text-slate-400">يرجى إدخال كلمة المرور للوصول لإدارة لوحة التحكم.</p>
+            <input type="password" id="admin-pass" placeholder="كلمة المرور (الافتراضية: 123456)" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-200 focus:outline-none focus:border-[#00d2ff]">
+            <p id="auth-error" class="text-xs text-rose-500 hidden">كلمة المرور غير صحيحة!</p>
+            <div class="flex justify-end gap-2">
+                <button onclick="closeAdminModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm">إلغاء</button>
+                <button onclick="loginAdmin()" class="px-5 py-2 rounded-lg bg-[#00d2ff] text-slate-950 font-bold text-sm">دخول</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+            جميع الحقوق محفوظة © <span id="year"></span> منصة <strong>أبو ساهر الشافعي</strong>
+        </div>
+    </footer>
+
+    <!-- App Logic JS -->
+    <script src="script.js"></script>
+</body>
+</html>
